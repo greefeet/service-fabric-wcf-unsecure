@@ -2,7 +2,6 @@
 services: service-fabric
 platforms: dotnet
 Fabric Cluster Version: 5.7.198.9494
-Fabric Nuget Version: 5.7.198, 2.7.198
 Microsoft.VisualStudio.Azure.Fabric.MSBuild: 1.6.0
 ---
 
