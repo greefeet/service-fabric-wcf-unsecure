@@ -15,13 +15,12 @@ namespace ServiceFabricWCF.Client
             string ReverseProxyEndpoint = "http://localhost:19081/ServiceFabricWCF/Calculator";
 
 
-            ICalculator CalculatorService = FactoryBasicHttpBinding<ICalculator>(ReverseProxyEndpoint);
+            ICalculator CalculatorService = GetService<ICalculator>(ReverseProxyEndpoint);
             Console.WriteLine($"Service Result : {await CalculatorService.Add(2,3)}");
         }
 
-        static o FactoryBasicHttpBinding<o>(string EndpointAddressUri)
+        static o GetService<o>(string EndpointAddressUri)
         {
-            Binding binding = new BasicHttpBinding();
             ChannelFactory<o> Factory = new ChannelFactory<o>(new BasicHttpBinding());
             return Factory.CreateChannel(new EndpointAddress(EndpointAddressUri));
         }

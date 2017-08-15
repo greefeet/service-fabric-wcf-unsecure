@@ -48,7 +48,31 @@ class Program
 ## Stateless Service with WCF+BasicHttpBinding
 
 ```cs
-//Calculator.cs
+//1. Regsiter Service - Program.cs
+internal static class Program
+{
+    private static void Main()
+    {
+        try
+        {
+            ServiceRuntime.RegisterServiceAsync("CalculatorType", context => new Calculator(context)).GetAwaiter().GetResult();
+                
+            ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(Calculator).Name);
+            
+            // Prevents this host process from terminating so services keep running.
+            Thread.Sleep(Timeout.Infinite);
+        }
+        catch (Exception e)
+        {
+            ServiceEventSource.Current.ServiceHostInitializationFailed(e.ToString());
+            throw;
+        }
+    }
+}
+```
+
+```cs
+//2. Create communication instant - Calculator.cs
 internal sealed class Calculator : StatelessService
 {
     protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
@@ -66,7 +90,7 @@ internal sealed class Calculator : StatelessService
 ```
 
 ```cs
-//CalculatorService.cs
+//3. Implement service - CalculatorService.cs
 public class CalculatorServiceSimple : ICalculator
 {
     public Task<double> Add(double n1, double n2)
