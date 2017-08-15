@@ -12,8 +12,10 @@ This sample project demonstrates Client and WCF Service in azure service fabric.
 ## Getting Start
 
 1. Install [Microsoft Azure Service Fabric SDK](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started)
-2. Publish "ServiceFabricWCF" to local cluster - [Deploy and remove applications using Visual Studio](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-publish-app-remote-cluster)
-3. Run "ServiceFabricWCF.Client". Client Result :
+2. Change Build Profile to "x64"
+3. Build Solutions
+4. Publish "ServiceFabricWCF" to local cluster - [Deploy and remove applications using Visual Studio](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-publish-app-remote-cluster)
+5. Run "ServiceFabricWCF.Client". Client Result :
 ```cmd
 Service Result : 5
 ```
