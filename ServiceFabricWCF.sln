@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "ServiceFabricWCF", "ServiceFabricWCF\ServiceFabricWCF.sfproj", "{4B7778B4-7847-47C7-A3E4-43F57A7788AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{C766DBA0-32F0-492A-9E17-D69222B2AF20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B7778B4-7847-47C7-A3E4-43F57A7788AF}.Debug|x64.ActiveCfg = Debug|x64
+		{4B7778B4-7847-47C7-A3E4-43F57A7788AF}.Debug|x64.Build.0 = Debug|x64
+		{4B7778B4-7847-47C7-A3E4-43F57A7788AF}.Debug|x64.Deploy.0 = Debug|x64
+		{4B7778B4-7847-47C7-A3E4-43F57A7788AF}.Release|x64.ActiveCfg = Release|x64
+		{4B7778B4-7847-47C7-A3E4-43F57A7788AF}.Release|x64.Build.0 = Release|x64
+		{4B7778B4-7847-47C7-A3E4-43F57A7788AF}.Release|x64.Deploy.0 = Release|x64
+		{C766DBA0-32F0-492A-9E17-D69222B2AF20}.Debug|x64.ActiveCfg = Debug|x64
+		{C766DBA0-32F0-492A-9E17-D69222B2AF20}.Debug|x64.Build.0 = Debug|x64
+		{C766DBA0-32F0-492A-9E17-D69222B2AF20}.Release|x64.ActiveCfg = Release|x64
+		{C766DBA0-32F0-492A-9E17-D69222B2AF20}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98BA1989-27AB-428B-8A97-F87397ADC594}
+	EndGlobalSection
+EndGlobal
