@@ -6,6 +6,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
+using System.ServiceModel;
+using Microsoft.ServiceFabric.Services.Communication.Wcf.Runtime;
+using ServiceFabricWCF.Shared;
 
 namespace Calculator
 {
@@ -24,7 +27,14 @@ namespace Calculator
         /// <returns>A collection of listeners.</returns>
         protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
         {
-            return new ServiceInstanceListener[0];
+            return new[] {
+                new ServiceInstanceListener(context => new WcfCommunicationListener<ICalculator>(
+                    context, 
+                    new CalculatorServiceSimple(),
+                    new BasicHttpBinding(),
+                    endpointResourceName: "ServiceEndpoint"
+                    ))
+            };
         }
 
         /// <summary>
